@@ -50,7 +50,7 @@ jobs:
           npm install
           npm run build
 
-      - name: sam build
+      - name: SAM build
         uses: TractorZoom/sam-cli-action@master
         with:
           sam_command: "build --template-file=dev.yaml"
