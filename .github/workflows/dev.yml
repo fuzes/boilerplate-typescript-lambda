@@ -44,6 +44,12 @@ jobs:
         with:
           node-version: '12'
 
+      - name: Create .env file
+        uses: SpicyPizza/create-envfile@v1
+        with:
+          envkey_TEST_SECRET: ${{ secrets.DEV_TEST_SECRET }}
+          file_name: ./hello-world/.env
+
       - name: NPM build
         working-directory: ./hello-world
         run: |

@@ -1,4 +1,6 @@
 import { APIGatewayProxyEvent, APIGatewayProxyResult} from "aws-lambda";
+import * as dotenv from 'dotenv';
+dotenv.config();
 /**
  *
  * Event doc: https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html#api-gateway-simple-proxy-for-lambda-input-format
@@ -15,6 +17,6 @@ import { APIGatewayProxyEvent, APIGatewayProxyResult} from "aws-lambda";
 export const lambdaHandler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
     return {
         statusCode: 200,
-        body: 'test!',
+        body: process.env.TEST_SECRET,
     };
 };
